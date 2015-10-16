@@ -49,7 +49,15 @@ class SiteController extends Controller
 
     public function actionIndex()
     {
-        return $this->render('index');
+        $form = new ContactForm();
+        if($form->load(Yii::$app->request->post()) && $form->validate()){
+            //DATOS
+            return $this->render('entry-form', ['model'=>$form]);
+        }else{
+            return $this->render('index', ['model'=>$form]);
+        }
+
+        //return $this->render('index');
     }
 
     public function actionLogin()

@@ -3,6 +3,9 @@
 /* @var $this yii\web\View */
 
 $this->title = 'My Yii Application';
+
+use yii\helpers\Html;
+use yii\widgets\ActiveForm;
 ?>
 <!--------------NOSOTROS---------------->
 <div class="nosotros">
@@ -36,21 +39,14 @@ $this->title = 'My Yii Application';
         <p>Encantados de hablar contigo</p>
     </div>
     <div class="col-md-6">
-        <?php /*$form=$this->beginWidget("CActiveForm");?>
-        <?php echo $form->labelEx($role, "nombre")?>
-        <?php echo $form->textField($role, "nombre", array("class"=>"form-control"))?>
-        <?php echo $form->error($role, "nombre")?>
-
-        <?php echo $form->labelEx($role, "email")?>
-        <?php echo $form->emailField($role, "email", array("class"=>"form-control"))?>
-        <?php echo $form->error($role, "email")?>
-
-        <?php echo $form->labelEx($role, "mensaje")?>
-        <?php echo $form->textArea($role, "mensaje", array("class"=>"form-control"))?>
-        <?php echo $form->error($role, "mensaje")?>
-
-        <?php echo CHtml::submitButton("Crear", array("class"=>"btn enviar"));?>
-        <?php $this->endWidget();*/?>
+        <?php $form = ActiveForm::begin(); ?>
+            <?= $form->field($model, 'name')?>
+            <?= $form->field($model, 'email')?>
+            <?= $form->field($model, 'comments')?>
+            <div class="form-group">
+                <?= Html::submitButton('Enviar', ['class'=>'btn enviar']) ?>
+            </div>
+        <?php ActiveForm::end(); ?>
     </div>
     <div class="col-md-6">
         
