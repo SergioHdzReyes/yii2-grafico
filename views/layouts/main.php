@@ -6,12 +6,14 @@
 use yii\helpers\Html;
 use yii\bootstrap\Nav;
 use yii\bootstrap\NavBar;
+use yii\widgets\Menu;
 use yii\widgets\Breadcrumbs;
 use app\assets\AppAsset;
 use yii\helpers\Url;
+use yii\web\View;
 
 $this->registerCssFile('css/style.css');
-//$this->registerJs('js/myscript.js');
+//$this->registerJsFile('/js/myscript.js', ['position'=> View::POS_END, 'depends'=>'yii\web\JqueryAsset']);
 AppAsset::register($this);
 ?>
 <?php $this->beginPage() ?>
@@ -31,8 +33,9 @@ AppAsset::register($this);
     <div class="menus">
         <?php
         NavBar::begin([
-            'brandLabel' => 'My Company',
+            'brandLabel' => 'Acceso Grafico',
             'brandUrl' => Yii::$app->homeUrl,
+            'renderInnerContainer'=>false,
             'options' => [
                 'class' => 'navbar navbar-default',
             ],

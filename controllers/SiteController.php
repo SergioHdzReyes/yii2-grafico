@@ -8,6 +8,9 @@ use yii\web\Controller;
 use yii\filters\VerbFilter;
 use app\models\LoginForm;
 use app\models\ContactForm;
+use app\models\Paquetes;
+use app\models\Nosotros;
+use app\models\Footer;
 
 class SiteController extends Controller
 {
@@ -50,11 +53,17 @@ class SiteController extends Controller
     public function actionIndex()
     {
         $form = new ContactForm();
+        $paquetes = Paquetes::find()->orderBy('id')->all();
+        $nosotros = Nosotros::find()->orderBy('id')->all();
+        $footer = Footer::find()->orderBy('id')->all();
+
+        $variables = ['model'=>$form, 'paquetes'=>$paquetes, 'nosotros'=>$nosotros, 'footer'=>$footer];
+
         if($form->load(Yii::$app->request->post()) && $form->validate()){
             //DATOS
-            return $this->render('entry-form', ['model'=>$form]);
+            return $this->render('entry-form', $variables);
         }else{
-            return $this->render('index', ['model'=>$form]);
+            return $this->render('index', $variables);
         }
 
         //return $this->render('index');

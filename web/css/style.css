@@ -15,7 +15,7 @@ body, html {width: 100%;height: 100%;}
 .navbar-default .navbar-toggle:focus, .navbar-default .navbar-toggle:hover {background-color: white;}
 .navbar-toggle:hover .icon-bar {background-color: #019BDB;}
 #bs-example-navbar-collapse-1 {padding: 0px;}
-#w0-collapse {
+#w1-collapse {
     padding: 0px;
 }
 
@@ -42,7 +42,11 @@ body, html {width: 100%;height: 100%;}
 #branding img, #print img, #ilustracion img, #diseno img, #todos img {width: 200px;height: 200px;}
 
 /*-----------NUESTRO-EQUIPO------------*/
-.nuestro-equipo {background: transparent url("../img/nuestro-equipo.png") no-repeat scroll center top / cover ; background-attachment:fixed;padding: 20px 0px 50px;}
+.nuestro-equipo {background: transparent url("../img/nuestro-equipo.png") no-repeat scroll center top / cover ; background-attachment:fixed;padding: 20px 0px 50px;text-align: center;}
+.nuestro-equipo span i {
+    color: #2191DF;
+    font-size: 20px;
+}
 
 /*--------------PAQUETES---------------*/
 .paquetes {background: transparent url("../img/paquetesbg.jpg") no-repeat scroll center top / cover ; background-attachment:fixed; padding-bottom:30px;}
@@ -54,11 +58,16 @@ body, html {width: 100%;height: 100%;}
 .blue-gray {color: rgb(48, 147, 200);background-color: rgb(232, 232, 232);}
 .paq-titles {font-size: 25px;font-weight: bold;}
 .paq-height {height: 320px;}
-.paquetes .col-lg-4 {margin: 30px 0px;transition: all 1s;}
+.paquetes .col-sm-4 {margin: 30px 0px;transition: all 1s;}
 .contratar.black-white:hover {color: #3093C8 !important;text-decoration: none !important;}
-.paquetes .col-lg-4:hover {
+.paquetes .col-sm-4:hover {
     transform: scale(1.1) skew(1deg);
     transition: all 1s;
+}
+.paquetes .container > p, .nuestro-equipo p {
+    color: #FFF;
+    font-weight: bold;
+    font-size: 45px;
 }
 
 /*--------------CONTACTO---------------*/
