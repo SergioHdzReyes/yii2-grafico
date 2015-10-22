@@ -15,7 +15,7 @@ body, html {width: 100%;height: 100%;}
 .navbar-default .navbar-toggle:focus, .navbar-default .navbar-toggle:hover {background-color: white;}
 .navbar-toggle:hover .icon-bar {background-color: #019BDB;}
 #bs-example-navbar-collapse-1 {padding: 0px;}
-#w1-collapse {
+.navbar-default .navbar-collapse, .navbar-default .navbar-form {
     padding: 0px;
 }
 
