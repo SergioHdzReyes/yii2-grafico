@@ -8,20 +8,6 @@ use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 use kartik\slider\Slider;
 ?>
-<div class="slider">
-    <?php
-    echo Slider::widget([
-        'name'=>'rating_1',
-        'value'=>7,
-        'sliderColor'=>Slider::TYPE_GREY,
-        'handleColor'=>Slider::TYPE_DANGER,
-        'pluginOptions'=>[
-            'handle'=>'triangle',
-            'tooltip'=>'always'
-        ]
-    ]);
-    ?>
-</div>
 <!--_____________NOSOTROS________________-->
 <div class="nosotros">
     <div class="container">

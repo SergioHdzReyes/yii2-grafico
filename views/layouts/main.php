@@ -13,7 +13,6 @@ use yii\helpers\Url;
 use yii\web\View;
 
 $this->registerCssFile('css/style.css');
-//$this->registerJsFile('/js/myscript.js', ['position'=> View::POS_END, 'depends'=>'yii\web\JqueryAsset']);
 AppAsset::register($this);
 ?>
 <?php $this->beginPage() ?>
@@ -43,13 +42,14 @@ AppAsset::register($this);
         echo Nav::widget([
             'options' => ['class' => 'nav menu'],
             'items' => [
-                ['label' => 'HOME', 'url' => ['/site/index']],
+                ['label' => 'HOME', 'url' => ['/']],
                 ['label' => 'NOSOTROS', 'url' => ['/site/about']],
                 ['label' => 'SERVICIOS', 'url' => ['/site/contact']],
                 ['label' => 'PORTAFOLIO', 'url' => ['/site/contact']],
                 ['label' => 'EQUIPO', 'url' => ['/site/contact']],
                 ['label' => 'PAQUETES', 'url' => ['/site/contact']],
                 ['label' => 'CONTACTO', 'url' => ['/site/contact']],
+                ['label' => 'ADMINISTRADOR', 'url' => ['/admin']],
             ],
         ]);
         NavBar::end();
