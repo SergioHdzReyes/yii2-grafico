@@ -9,7 +9,11 @@ use app\assets\AppAsset;
 use yii\helpers\Url;
 use yii\web\View;
 
-$this->registerCssFile('css/admin.css');
+use yii\bootstrap\NavBar;
+use yii\bootstrap\Nav;
+use yii\widgets\Menu;
+
+//$this->registerCssFile('css/admin.css');
 AppAsset::register($this);
 ?>
 <?php $this->beginPage() ?>
@@ -23,11 +27,51 @@ AppAsset::register($this);
     <?php $this->head() ?>
 </head>
 <body>
-<?php $this->beginBody() ?>
+<div class="top-menu-bar">
+	<?php
+	/*NavBar::begin(['brandLabel'=>'Accesografico']);
+	echo Nav::widget([
+		'items'=>[
+		['label'=>'Nosotros', 'url'=>['admin/nosotros']],
+		['label'=>'Paquetes', 'url'=>['admin/paquetes']],
+		['label'=>'Salir', 'url'=>['admin/logout']]
+		],
+		'options'=>['class'=>'navbar-nav'],
+	]);
+	NavBar::end();*/
+	?>
+</div>
+		<?php if(!\Yii::$app->user->isGuest){ ?>
+			<div id="wrapper">
+			<div id="sidebar-wrapper">
+				<?php
+				//NavBar::begin(['brandLabel'=>'Accesografico']);
+				echo Nav::widget([
+					'items'=>[
+					['label'=>'Home', 'url'=>['../web']],
+					['label'=>'Admin', 'url'=>['../web/admin']],
+					['label'=>'Nosotros', 'url'=>['admin/nosotros']],
+					['label'=>'Paquetes', 'url'=>['admin/paquetes']],
+					['label'=>'Salir', 'url'=>['admin/logout']]
+					],
+					'options'=>['class'=>'sidebar-nav'],
+				]);
+				//NavBar::end();
+				?>
+			</div>
+			<?php }else{?>
+			<div class="wrap">
+		<?php } ?>
 
-<?= $content ?>
+		<?php if(!\Yii::$app->user->isGuest){ ?><div id="page-content-wrapper"><?php } ?>
+			<?php $this->beginBody() ?>
+			<!--INIT-->
+			<?= $content ?>
+			<!--END-->
+			<?php $this->endBody() ?>
+		<?php if(!\Yii::$app->user->isGuest){ ?></div><?php } ?>
 
-<?php $this->endBody() ?>
+		<?php if(!\Yii::$app->user->isGuest) echo "</div>"; ?>
 </body>
 </html>
 <?php $this->endPage() ?>

@@ -17,7 +17,7 @@ use kartik\slider\Slider;
                 <div class="barra">&nbsp;</div>
                 <?php foreach($nosotros as $we):?>
                     <?php echo $we->contenido;?>
-                <?php endforeach;?>
+                <?php endforeach; ?>
             </div>
         </div>
     </div>

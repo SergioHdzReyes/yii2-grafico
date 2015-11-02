@@ -1,3 +1,15 @@
 body {
-    background-color: gray;
+    background-color: white;
+}
+.site-login {
+    width: 300px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -206px;
+    margin-left: -150px;
+    background-color: #019CDE;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 40px 10px #019CDE;
 }
